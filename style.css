@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(15, 40px);  /* 15 columns, each 40px wide */
+    grid-template-rows: repeat(15, 40px);     /* 15 rows, each 40px tall */
+    gap: 2px;
+    margin-top: 20px;
+}
+
+.grid-cell {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.grid-cell.player {
+    background-color: yellow;
+}
+
+.grid-cell.garage {
+    background-color: lightgray;
+}
+
+.grid-cell.pickup {
+    background-color: lightsalmon;
+}
+
+.grid-cell.delivery {
+    background-color: lightgreen;
+}
+
+.grid-cell.preview {
+    background-color: lightblue;
+}
+
+#status-container {
+    margin-top: 20px;
+}
+
+#status-table {
+    width: 100%;
+    text-align: left;
+}
+
+#status-table td {
+    vertical-align: top;
+    padding: 10px;
+}
+
+#controls {
+    margin: 10px
+}
+
+
+h3 {
+    margin-bottom: 10px;
+}
+
+.status-label {
+    display: inline-block;
+    width: 150px;  /* Increase the width to ensure alignment */
+}
+
+.status-value {
+    display: inline-block;
+    min-width: 50px; /* Adjust width for consistent spacing */
+}
+
+#player-status p, #warehouse-status p, #delivery-status p {
+    display: flex;
+    justify-content: space-between; /* Flexbox for consistent tab-like spacing */
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+
+#congrats {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: linear-gradient(135deg, #ffffffbc, #ffffff);
+    padding: 20px;
+}
