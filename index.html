@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistic Game - Version 1.1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Logistic Game - Version 2.0</h1>
+
+    <div id="description">
+        <h2>Game Rules</h2>
+        <p>Select a vehicle to move and deliver goods. Complete the quest by delivering the required number of goods.</p>
+        <ul>
+            <li><strong>P</strong>: Player</li>
+            <li><strong>G</strong>: Garage (Starting Point)</li>
+            <li><strong>W</strong>: Warehouse (Pick-up Goods)</li>
+            <li><strong>D</strong>: Delivery Point (Deliver Goods)</li>
+        </ul>
+    </div>
+
+    <!-- Add vehicle selection -->
+    <div>
+        <label for="vehicle-select">Select Vehicle:</label>
+        <select id="vehicle-select">
+            <option value="bike">Bike</option>
+            <option value="car">Car</option>
+            <option value="van">Van</option>
+            <option value="truck">Truck</option>
+            <option value="train">Train</option>
+            <option value="boat">Boat</option>
+            <option value="airplane">Airplane</option>
+        </select>
+    </div>
+
+    <!-- Add level selection -->
+    <div>
+        <label for="level-select">Select Level:</label>
+        <select id="level-select">
+            <option value="1">Level 1 (Easy)</option>
+            <option value="2">Level 2 (Medium)</option>
+            <option value="3">Level 3 (Hard)</option>
+        </select>
+    </div>
+
+   
+
+    <!-- Game Board -->
+    <div id="game-board" class="grid"></div>
+
+    <div id="controls"></div>
+        <button id="restart">Restart Game</button>
+    </div>
+
+    <!-- Status Information -->
+    <div id="status-container">
+        <table id="status-table">
+            <tr>
+                <!-- Player Status -->
+                <td id="player-status">
+                    <h3>Player Status</h3>
+                    <p><span class="status-label">Moves:</span> <span id="player-moves" class="status-value">0</span></p>
+                    <p><span class="status-label">Cost:</span> <span id="player-cost" class="status-value">0</span></p>
+                    <p><span class="status-label">Carrying:</span> <span id="carry-status" class="status-value red">No</span></p>
+                    <p><span class="status-label">Goods Carried:</span> <span id="goods-status" class="status-value">0</span></p>
+                    <p><span class="status-label">Score:</span> <span id="score" class="status-value">0</span></p>
+                    <p><span class="status-label">Level:</span> <span id="level" class="status-value">1</span></p>
+                    <p style="display: none;"><span class="status-label">Position:</span> <span id="player-position" class="status-value">N/A</span></p>
+                </td>
+
+                <td id="vehicle-status">
+                    <h3>Vehicle Status</h3>
+                    <p><span class="status-label">Vehicle:</span> <span id="vehicle-name" class="status-value">N/A</span></p>
+                    <p><span class="status-label">Movement Range:</span> <span id="vehicle-movement" class="status-value">N/A</span></p>
+                    <p><span class="status-label">Max Goods Capacity:</span> <span id="vehicle-capacity" class="status-value">N/A</span></p>
+                </td>
+                
+
+                <!-- Warehouse Status -->
+                <td id="warehouse-status">
+                    <h3>Warehouse Status</h3>
+                    <p><span class="status-label">Goods in Warehouse:</span> <span id="warehouse-status-value" class="status-value">10/10</span></p>
+                </td>
+
+                <!-- Delivery Status -->
+                <td id="delivery-status">
+                    <h3>Delivery Status</h3>
+                    <p><span class="status-label">Delivered:</span> <span id="delivery-status-value" class="status-value">0/2</span></p>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+    
+
+    <!-- Controls -->
+    
+
+    <div id="congrats" style="display: none;">
+        <h2 id="congrats-text">🎉 Congratulations! 🎉</h2>
+        <p id="level-up-message">You've reached a new level!</p>
+    </div>
+
+    <script src="game_script.js"></script>
+</body>
+</html>
